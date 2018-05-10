@@ -8,7 +8,6 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>com.mobius-software.mqttsn</groupId>
 	<artifactId>mqttsn-runner</artifactId>
 
 	<name>mqttsn-runner</name>
