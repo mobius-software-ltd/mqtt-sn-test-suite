@@ -1,0 +1,135 @@
+{
+	"requestTimeout" : 30000,
+	"data": [
+		{
+			"url": "http://{controller.1.ip}:{controller.1.port}/controller",
+			"scenario": {
+				"id": null,
+				"properties": {
+					"serverHostname": "{mqtt.lb.ip}",
+					"serverPort": 1883,
+					"resendInterval": 3000,
+					"minPingInterval": 5000,
+					"identifierRegex": "%identity%server%",
+					"startIdentifier": 0,
+					"scenarioDelay": 0
+				},
+				"count": 1,
+				"threshold": 1000,
+				"startThreshold": 500,
+				"continueOnError": true,
+				"commands": [
+					{
+						"type": "CONNECT",
+						"sendTime": 0,
+						"commandProperties": [
+							{
+								"type": "CLEAN_SESSION",
+								"value": "true"
+							},
+							{
+								"type": "KEEPALIVE",
+								"value": "5"
+							}
+						]
+					},
+					{
+						"type": "SUBSCRIBE",
+						"sendTime": 2000,
+						"commandProperties": [
+							{
+								"type": "TOPIC",
+								"value": "performance/test"
+							},
+							{
+								"type": "QOS",
+								"value": "1"
+							}
+						]
+					},
+					{
+						"type": "DISCONNECT",
+						"sendTime": 25000,
+						"commandProperties": null
+					}
+				]
+			}
+		},
+		{
+			"url": "http://{controller.1.ip}:{controller.1.port}/controller",
+			"scenario": {
+				"id": null,
+				"properties": {
+					"serverHostname": "{mqtt.lb.ip}",
+					"serverPort": 1883,
+					"resendInterval": 3000,
+					"minPingInterval": 5000,
+					"identifierRegex": "%server%identity%",
+					"startIdentifier": 0,
+					"scenarioDelay": 1000
+				},
+				"count": 1000,
+				"threshold": 1000,
+				"startThreshold": 500,
+				"continueOnError": true,
+				"commands": [
+					{
+						"type": "CONNECT",
+						"sendTime": 0,
+						"commandProperties": [
+							{
+								"type": "CLEAN_SESSION",
+								"value": "true"
+							},
+							{
+								"type": "KEEPALIVE",
+								"value": "5"
+							}
+						]
+					},
+					{
+						"type": "REGISTER",
+						"sendTime": 1000,
+						"commandProperties": [
+							{
+								"type": "TOPIC",
+								"value": "performance/test"
+							}
+						]
+					},
+					{
+						"type": "PUBLISH",
+						"sendTime": 1000,
+						"commandProperties": [
+							{
+								"type": "TOPIC",
+								"value": "performance/test"
+							},
+							{
+								"type": "QOS",
+								"value": "1"
+							},
+							{
+								"type": "COUNT",
+								"value": "10"
+							},
+							{
+								"type": "RESEND_TIME",
+								"value": 1000
+							},
+							{
+								"type": "MESSAGE_SIZE",
+								"value" : 20
+							}
+						]
+					},
+					{
+						"type": "DISCONNECT",
+						"sendTime": 2500,
+						"commandProperties": null
+					}
+				]
+			}
+		}
+	]
+}

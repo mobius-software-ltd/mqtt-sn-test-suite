@@ -1,0 +1,40 @@
+{
+	"requestTimeout": 1000,
+	"data": [
+		{
+			"url": "http://127.0.0.1:20000/controller",
+			"scenario": {
+				"id": null,
+				"properties": {
+					"serverHostname": "172.21.0.252",
+					"serverPort": 1883,
+					"resendInterval": 3000,
+					"minPingInterval": 5000,
+					"identifierRegex": "%server%identity%",
+					"startIdentifier": 0,
+					"scenarioDelay": 0
+				},
+				"count": 1,
+				"threshold": 1,
+				"startThreshold": 500,
+				"continueOnError": true,
+				"commands": [
+					{
+						"type": "CONNECT",
+						"sendTime": 3000,
+						"commandProperties": [
+							{
+								"type": "CLEAN_SESSION",
+								"value": "true"
+							},
+							{
+								"type": "KEEPALIVE",
+								"value": "30"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

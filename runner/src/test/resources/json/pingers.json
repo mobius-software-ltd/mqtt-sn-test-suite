@@ -1,0 +1,85 @@
+{
+	"requestTimeout" : 180000,
+	"data": [
+		{
+			"url": "http://{controller.1.ip}:{controller.1.port}/controller",
+			"scenario": {
+				"id": null,
+				"properties": {
+					"serverHostname": "{mqtt.lb.ip}",
+					"serverPort": 1883,
+					"resendInterval": 3000,
+					"minPingInterval": 5000,
+					"identifierRegex": "%identity%server%",
+					"startIdentifier": 0,
+					"scenarioDelay": 0
+				},
+				"count": 50000,
+				"threshold": 700,
+				"startThreshold": 500,
+				"continueOnError": true,
+				"commands": [
+					{
+						"type": "CONNECT",
+						"sendTime": 0,
+						"commandProperties": [
+							{
+								"type": "CLEAN_SESSION",
+								"value": "true"
+							},
+							{
+								"type": "KEEPALIVE",
+								"value": "10"
+							}
+						]
+					},
+					{
+						"type": "DISCONNECT",
+						"sendTime": 121500,
+						"commandProperties": null
+					}
+				]
+			}
+		},
+		{
+			"url": "http://{controller.2.ip}:{controller.2.port}/controller",
+			"scenario": {
+				"id": null,
+				"properties": {
+					"serverHostname": "{mqtt.lb.ip}",
+					"serverPort": 1883,
+					"resendInterval": 3000,
+					"minPingInterval": 5000,
+					"identifierRegex": "%server%identity%",
+					"startIdentifier": 0,
+					"scenarioDelay": 0
+				},
+				"count": 50000,
+				"threshold": 700,
+				"startThreshold": 500,
+				"continueOnError": true,
+				"commands": [
+					{
+						"type": "CONNECT",
+						"sendTime": 0,
+						"commandProperties": [
+							{
+								"type": "CLEAN_SESSION",
+								"value": "true"
+							},
+							{
+								"type": "KEEPALIVE",
+								"value": "10"
+							}
+						]
+					},
+					{
+						"type": "DISCONNECT",
+						"sendTime": 121500,
+						"commandProperties": null
+					}
+				]
+			}
+		}
+	]
+}
