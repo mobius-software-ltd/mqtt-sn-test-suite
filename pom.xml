@@ -17,6 +17,13 @@
 	<name>com.mobius-software.mqttsn:testsuite</name>
 	<description>MQTT-SN Performance Testsuite</description>
 
+	<scm>
+		<url>https://github.com/mobius-software-ltd/mqtt-sn-test-suite</url>
+		<connection>scm:git:git://github.com:mobius-software-ltd/mqtt-sn-test-suite.git</connection>
+		<developerConnection>scm:git:git@github.com:mobius-software-ltd/mqtt-sn-test-suite.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	
 	<modules>
 		<module>common</module>
 		<module>controller</module>
