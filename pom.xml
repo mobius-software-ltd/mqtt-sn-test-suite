@@ -9,7 +9,7 @@
 
 	<groupId>com.mobius-software.mqttsn</groupId>
 	<artifactId>mqttsn-testsuite</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
@@ -20,7 +20,7 @@
 		<url>https://github.com/mobius-software-ltd/mqtt-sn-test-suite</url>
 		<connection>scm:git:git://github.com:mobius-software-ltd/mqtt-sn-test-suite.git</connection>
 		<developerConnection>scm:git:git@github.com:mobius-software-ltd/mqtt-sn-test-suite.git</developerConnection>
-		<tag>mqttsn-testsuite-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 	
 	<modules>

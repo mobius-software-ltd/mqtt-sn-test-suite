@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.mobius-software.mqttsn</groupId>
 		<artifactId>mqttsn-testsuite</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>mqttsn-controller</artifactId>
@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>com.mobius-software.mqttsn</groupId>
 			<artifactId>mqttsn-common</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
