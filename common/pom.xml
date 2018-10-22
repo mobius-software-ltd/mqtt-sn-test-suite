@@ -1,6 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>com.mobius-software.mqttsn</groupId>
 		<artifactId>mqttsn-testsuite</artifactId>
@@ -8,8 +9,12 @@
 	</parent>
 
 	<artifactId>mqttsn-common</artifactId>
-	
+
 	<name>mqttsn-common</name>
+
+	<properties>
+		<jackson.version>2.9.5</jackson.version>
+	</properties>
 	
 	<dependencies>
 		<dependency>
@@ -31,19 +36,19 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.4.1</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.4.1</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.4.1</version>
+			<version>${jackson.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
@@ -52,15 +57,15 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
 			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>2.4.1</version>
+			<version>${jackson.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.mobius-software.mqttsn</groupId>
 			<artifactId>mqtt-sn-parser</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
