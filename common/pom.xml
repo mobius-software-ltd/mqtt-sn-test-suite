@@ -9,13 +9,12 @@
 	</parent>
 
 	<artifactId>mqttsn-common</artifactId>
-
 	<name>mqttsn-common</name>
 
 	<properties>
 		<jackson.version>2.9.5</jackson.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>commons-logging</groupId>
@@ -48,16 +47,16 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>1.9.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>${jackson.version}</version>
 		</dependency>
 
 		<dependency>

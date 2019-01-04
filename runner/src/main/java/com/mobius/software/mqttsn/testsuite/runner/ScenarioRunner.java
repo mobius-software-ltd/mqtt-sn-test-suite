@@ -35,7 +35,7 @@ public class ScenarioRunner
 		try
 		{
 			Args arguments = Args.parse(args);
-			ControllerRequest requestData = parseRequests(arguments.getRequestFilepath());
+			ControllerRequest requestData = parseRequests(new File(arguments.getRequestFilepath()).getAbsolutePath());
 
 			ScenarioRunner runner = new ScenarioRunner(requestData);
 			runner.start();
@@ -52,13 +52,13 @@ public class ScenarioRunner
 	{
 		File json = FileUtil.readFile(absoluteFilePath);
 		TemplateParser tempateParser = new TemplateParser();
-		tempateParser.addTemplate("{controller.1.ip}", "13.93.104.25");
-		tempateParser.addTemplate("{controller.1.port}", "9998");
-		tempateParser.addTemplate("{controller.2.ip}", "51.144.103.59");
-		tempateParser.addTemplate("{controller.2.port}", "9998");
-		//tempateParser.addTemplate("{controller.3.ip}", "");
-		//tempateParser.addTemplate("{controller.3.port}", "9998");
-		tempateParser.addTemplate("{mqtt.lb.ip}", "13.94.158.185");
+		tempateParser.addTemplate("controller.1.ip", "13.93.104.25");
+		tempateParser.addTemplate("controller.1.port", "9998");
+		tempateParser.addTemplate("controller.2.ip", "51.144.103.59");
+		tempateParser.addTemplate("controller.2.port", "9998");
+		//tempateParser.addTemplate("controller.3.ip", "");
+		//tempateParser.addTemplate("controller.3.port", "9998");
+		tempateParser.addTemplate("broker.ip", "13.94.158.185");
 		
 		String textual = tempateParser.fileToStringProcessTemplates(json);
 		ControllerRequest data = new ObjectMapper().readValue(textual, ControllerRequest.class);

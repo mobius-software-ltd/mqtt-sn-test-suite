@@ -58,10 +58,11 @@
 							<mainClass>com.mobius.software.mqttsn.testsuite.controller.ControllerRunner</mainClass>
 						</manifest>
 					</archive>
-					<finalName>controller</finalName>
+					<finalName>mqttsn-controller</finalName>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
+					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 				<executions>
 					<execution>
