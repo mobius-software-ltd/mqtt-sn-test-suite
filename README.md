@@ -23,10 +23,9 @@ Now you have the controller (in _mqtt-test-suite/controllmqtt-test-suite/control
 (in _mqtt-test-suite/runner/target_ folder) jar files on your computer.
 To make the work more convenient, create _performance_test_ folder which will contain
 `controller-jar-with-dependencies.jar` and `runner-jar-with-dependencies.jar`.
-Also you should add [JSON files](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/runner/src/test/resources/json) and config.properties to this very performance_test folder. 
+Also you should add [JSON files](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/runner/src/test/resources/json) and [config.properties](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/controller/src/main/resources/config.properties) to this very performance_test folder. 
 Modify scenario file by setting "controller.1.ip" and "broker.ip" with public IP addresses used on controller and broker.
-In [config.properties](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/controller/src/main/resources/config.properties) 
-set "localHostname" property with local ip address of the machine running the controller.
+In config.properties set "localHostname" property with local ip address of the machine running the controller.
 
 ### Test run
 
