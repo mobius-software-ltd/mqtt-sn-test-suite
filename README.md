@@ -53,9 +53,9 @@ Now you can run the test by running the following command:
 ```
 java -jar test-runner.jar publishers_qos0.json
 ```
-The command mentioned above is an example of running the test scenario which is described in `pipeline.json` file.
+The command mentioned above is an example of running the test scenario which is described in `publishers_qos0.json` file.
 
-Each [JSON file](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/tree/master/docs/docs-suite/src/main/asciidoc/samples) contains different test scenarios. You can separately run each test scenario by indicating the name of a specific [JSON file](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/tree/master/docs/docs-suite/src/main/asciidoc/samples). When the test is over you will get the report for each test scenario:
+Each [JSON file](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/runner/src/test/resources/json) contains different test scenarios. You can separately run each test scenario by indicating the name of a specific [JSON file](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/runner/src/test/resources/json). When the test is over you will get the report for each test scenario:
 ```
 +---------- Scenario-ID:  8bfe7e26-f2af-4980-a403-59b82e07188c ---------- Result: SUCCESS ----------+ 
 
