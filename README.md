@@ -19,10 +19,10 @@ First of all, you should clone [Performance MQTT-SN Test Suite](https://github.c
 
 Then you have to build the project. For this purpose run in console "mvn clean install -Dgpg.skip=true" 
 
-Now you have the controller (in _mqtt-test-suite/controllmqtt-test-suite/controller_ folder) and the test runner 
-(in _mqtt-test-suite/runner/target_ folder) jar files on your computer.
-To make the work more convenient, create _performance_test_ folder which will contain
-`controller-jar-with-dependencies.jar` and `runner-jar-with-dependencies.jar`.
+Now you have the controller (in mqtt-sn-test-suite/controller/target folder)) and the test runner 
+(in _mqtt-sn-test-suite/runner/target_ folder) jar files on your computer.
+To make the work more convenient, create _performance_test_ folder containing
+`mqttsn-controller.jar` and `mqttsn-scenario-runner.jar`.
 Also you should add [JSON files](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/runner/src/test/resources/json) and [config.properties](https://github.com/mobius-software-ltd/mqtt-sn-test-suite/blob/master/controller/src/main/resources/config.properties) to this very performance_test folder. 
 Modify scenario file by setting "controller.1.ip" and "broker.ip" with public IP addresses used on controller and broker.
 In config.properties set "localHostname" property with local ip address of the machine running the controller.
@@ -36,7 +36,7 @@ the command which is given below (do not forget to indicate your path):
 Now you can start the controller by running the following command :
 
 ```
-java -Xmx1024m -Xms1024m -jar mqttsn-controller.jar http://127.0.0.1:9998/ /home/username/performance_test/controller.params
+java -Xmx1024m -Xms1024m -jar mqttsn-controller.jar
  
 ```
 Here is a brief explanation:
@@ -47,14 +47,11 @@ Here is a brief explanation:
 
 **controller.jar** – controller which is inside the _performance_test_ folder;
 
-**http://192.168.1.1:9998/** - IP address and port of controller;
-
-**/home/username/performance_test/controller.params** – path to controller.params file.
 
 Now you should open the second terminal window and `cd` to _performance_test_ folder. 
 Now you can run the test by running the following command:
 ```
-java -jar test-runner.jar pipeline.json
+java -jar test-runner.jar publishers_qos0.json
 ```
 The command mentioned above is an example of running the test scenario which is described in `pipeline.json` file.
 
